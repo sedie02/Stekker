@@ -9,7 +9,7 @@
       <input #username type="text"  placeholder="username"/>
       <label>Password</label>
       <input #password type="text"  placeholder="password"/>
-      <div (click)="updateData()" >Update </div>
+      <div (click)="updateData(username.value, password.value)" >Update </div>
     
     </div>
     
