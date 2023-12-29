@@ -1,25 +1,26 @@
-<h2>Stekker Data</h2>
+
 
 
 <div id="holder"> 
+  <h2>Stekker</h2>
   <div id="Auth">
-    <h3>Auth</h3>
+    <h3>Authorization</h3>
  
       <label>Username</label>
       <input #username type="text"  placeholder="username"/>
       <label>Password</label>
       <input #password type="text"  placeholder="password"/>
-      <div (click)="updateData(username.value, password.value)" >Update </div>
+      <div id="update" (click)="updateData(username.value, password.value)" >Update </div>
     
     </div>
     
-    <div>
-      <h3>Data</h3>
-      <h4>Name:</h4>
-      <h4>On: </h4>
-      <h4>power:</h4>
-      <h4>today: </h4>
-      <h4>Yesterday: </h4>
+    <div id="data">
+      <h3>Data </h3>
+      <h4>Name: {{ webData.name }}</h4>
+      <h4>On: {{ webData.on }}</h4>
+      <h4>power: {{ webData.power }}</h4>
+      <h4>today: {{ webData.today }}</h4>
+      <h4>Yesterday:{{ webData.yesterday }} </h4>
     </div>
 
 </div>

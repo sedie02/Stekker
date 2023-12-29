@@ -14,33 +14,31 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class AppComponent {
   title = 'Stekker';
-
+  webData : any;
 
   constructor(private http:HttpClient){
-
+    var getData;
   }
    updateData(value: any, value2: any){
     let url = "http://localh2-env.eba-rpvpzjqz.eu-central-1.elasticbeanstalk.com/plug/48551917CE6C";
-    let url2 = "https://jsonplaceholder.typicode.com/todos/1";
     var username = value;
     var password = value2;
-    var login = username + ":" + password;
-    console.log(login);
+    var login = "Basic " + btoa((username + ":" + password).toString());
     var getData;
 
-    const options : Object = {
-      Headers: new HttpHeaders({
-        "content-type": "application/json",
-        Authorization: "Basic" + btoa(login)
-      }),
-    }
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'text/xml',
+        'Authorization': login
+      })
+    };
 
-    this.http.get(url, options).subscribe((data) =>{
-      getData = data;
-      console.log(getData);
+    this.http.get(url, httpOptions).subscribe((data) =>{
+      this.webData = data;
+      console.log(this.webData);
 
     });
-
+    
   
   
   
