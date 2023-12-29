@@ -34,11 +34,14 @@ export class AppComponent {
     };
 
     this.http.get(url, httpOptions).subscribe((data) =>{
+      
       this.webData = data;
       console.log(this.webData);
 
     });
     
+
+
   
   
   

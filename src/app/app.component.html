@@ -9,7 +9,7 @@
       <label>Username</label>
       <input #username type="text"  placeholder="username"/>
       <label>Password</label>
-      <input #password type="text"  placeholder="password"/>
+      <input #password type="text"  placeholder="password" (keydown.enter)="updateData(username.value, password.value)"/>
       <div id="update" (click)="updateData(username.value, password.value)" >Update </div>
     
     </div>
